@@ -6,7 +6,7 @@ function HomeScreen(props) {
 
   return (
     <View>
-      <Text style={styles.text}>Alex's App</Text>
+      <Text style={styles.text}>Alex's React Native App</Text>
 
       <View style={styles.marginSpace}>
         <Button
@@ -26,10 +26,15 @@ function HomeScreen(props) {
           onPress={() => navigation.navigate("Image")}
         />
       </View>
+      <View style={styles.marginSpace}>
+        <Button
+          title="Go to Counter Demo"
+          onPress={() => navigation.navigate("Counter")}
+        />
+      </View>
     </View>
-
   )
-};
+}
 
 const styles = StyleSheet.create({
   text: {
