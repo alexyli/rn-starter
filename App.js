@@ -11,7 +11,7 @@ const navigator = createStackNavigator(
     Home: HomeScreen,
     Components: ComponentsScreen,
     List: ListScreen,
-    image: ImageScreen,
+    Image: ImageScreen,
     CounterScreen: CounterScreen
   },
   {

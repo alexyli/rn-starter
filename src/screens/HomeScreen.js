@@ -7,7 +7,25 @@ function HomeScreen(props) {
   return (
     <View>
       <Text style={styles.text}>Alex's App</Text>
-      <Button title="Go to Components Demo" onPress={() => navigation.navigate("Components")} />
+
+      <View style={styles.marginSpace}>
+        <Button
+          title={"Go to Components Demo"}
+          onPress={() => navigation.navigate("Components")}
+        />
+      </View>
+      <View style={styles.marginSpace}>
+        <Button
+          title="Go to List Demo"
+          onPress={() => navigation.navigate("List")}
+        />
+      </View>
+      <View style={styles.marginSpace}>
+        <Button
+          title="Go to Image Demo"
+          onPress={() => navigation.navigate("Image")}
+        />
+      </View>
     </View>
 
   )
@@ -15,7 +33,13 @@ function HomeScreen(props) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30
+    fontSize: 30,
+    textAlign: "center",
+    marginVertical: 40
+  },
+  marginSpace: {
+    paddingVertical: 20,
+    paddingHorizontal: 40
   }
 });
 

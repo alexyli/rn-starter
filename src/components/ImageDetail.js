@@ -1,9 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
-function ImageDetail(props) {
+function ImageDetail({ title, imageSource, score }) {
   return (
-    <Text>Show image of {props.title}</Text>
+    <View>
+      <Image source={imageSource} />
+      <Text>Show image of {title}</Text>
+      <Text>Image score - {score}</Text>
+    </View>
   )
 }
 
