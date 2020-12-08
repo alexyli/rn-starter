@@ -32,6 +32,12 @@ function HomeScreen(props) {
           onPress={() => navigation.navigate("Counter")}
         />
       </View>
+      <View style={styles.marginSpace}>
+        <Button
+          title="Go to Color Demo"
+          onPress={() => navigation.navigate("Color")}
+        />
+      </View>
     </View>
   )
 }
