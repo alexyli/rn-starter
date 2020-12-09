@@ -1,43 +1,32 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, FlatList } from "react-native";
 
 function HomeScreen(props) {
   const { navigation } = props;
+  const buttons = [
+    { title: "Go to Components Demo", screen: "Components" },
+    { title: "Go to List Demo", screen: "List" },
+    { title: "Go to Image Demo", screen: "Image" },
+    { title: "Go to Counter Demo", screen: "Counter" },
+    { title: "Go to Color Demo", screen: "Color" },
+    { title: "Go to Square Demo", screen: "Square" }
+  ]
 
   return (
     <View>
       <Text style={styles.text}>Alex's React Native App</Text>
-
-      <View style={styles.marginSpace}>
-        <Button
-          title={"Go to Components Demo"}
-          onPress={() => navigation.navigate("Components")}
-        />
-      </View>
-      <View style={styles.marginSpace}>
-        <Button
-          title="Go to List Demo"
-          onPress={() => navigation.navigate("List")}
-        />
-      </View>
-      <View style={styles.marginSpace}>
-        <Button
-          title="Go to Image Demo"
-          onPress={() => navigation.navigate("Image")}
-        />
-      </View>
-      <View style={styles.marginSpace}>
-        <Button
-          title="Go to Counter Demo"
-          onPress={() => navigation.navigate("Counter")}
-        />
-      </View>
-      <View style={styles.marginSpace}>
-        <Button
-          title="Go to Color Demo"
-          onPress={() => navigation.navigate("Color")}
-        />
-      </View>
+      <FlatList
+        keyExtractor={button => button.screen}
+        data={buttons}
+        renderItem={({item}) => (
+          <View style={styles.marginSpace}>
+            <Button
+              title={item.title}
+              onPress={() => navigation.navigate(item.screen)}
+            />
+          </View>
+        )}
+      />
     </View>
   )
 }
